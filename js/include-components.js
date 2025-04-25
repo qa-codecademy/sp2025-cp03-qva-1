@@ -10,6 +10,15 @@ fetch("../components/navbar.html")
         link.classList.add("active");
       }
     });
+
+    const hamburger = document.getElementById("hamburger-menu");
+    const navList = document.getElementById("nav-list");
+
+    if (hamburger && navList) {
+      hamburger.addEventListener("click", () => {
+        navList.classList.toggle("show");
+      });
+    }
   });
 
 fetch("../components/footer.html")

@@ -5,6 +5,8 @@
   padding-left: 100px;
   padding-right: 100px;
   justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 #nav-list {
@@ -29,7 +31,7 @@
   font-weight: 700;
 }
 
-#logo-image {
+#logo-image-navbar {
   height: 70px;
   width: 70px;
 }

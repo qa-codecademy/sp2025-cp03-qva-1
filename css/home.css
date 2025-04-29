@@ -8,12 +8,6 @@
   background-position: center;
 }
 
-#hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .hero-overlay {
   height: 100%;
   width: 100%;

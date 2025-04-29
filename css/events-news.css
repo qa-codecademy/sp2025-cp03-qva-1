@@ -1,0 +1,111 @@
+#hero-events {
+  position: relative;
+  width: 100%;
+  background-image: url("../assets/images/events.jpg");
+  height: calc(60vh - 70px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.hero-overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.overlay-text {
+  width: 600px;
+  position: absolute;
+  bottom: 80px;
+  left: 120px;
+  text-align: left;
+}
+
+.overlay-text h1 {
+  font-size: 56px;
+  color: white;
+}
+
+.overlay-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .overlay-text h1 {
+    font-size: 48px;
+  }
+
+  .overlay-text p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .overlay-text {
+    width: 50%;
+    bottom: 80px;
+    left: 100px;
+  }
+
+  .overlay-text h1 {
+    font-size: 40px;
+  }
+
+  .overlay-text p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 671px) and (max-width: 767px) {
+  .overlay-text {
+    width: 40%;
+    bottom: 80px;
+    left: 70px;
+  }
+
+  .overlay-text h1 {
+    font-size: 28px;
+  }
+
+  .overlay-text p {
+    font-size: 12px;
+  }
+
+  #hero-events {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 670px) {
+  #hero-events {
+    height: 40vh;
+  }
+
+  .overlay-text {
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .overlay-text h1 {
+    font-size: 26px;
+  }
+
+  .overlay-text p {
+    font-size: 10px;
+  }
+
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

@@ -6,9 +6,69 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
   </head>
   <body>
     <div id="navbar"></div>
+    <div class="gallery-title">
+      <h1>
+        <span>Photo</span> <br />
+        Gallery
+      </h1>
+    </div>
+    <section class="gallery-section">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../assets/images/image1.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image2.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image3.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image4.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image5.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image6.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image7.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image8.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image9.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image10.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image11.jpg" alt="Gallery Image" />
+        </div>
+        <div class="gallery-item">
+          <img src="../assets/images/image12.jpg" alt="Gallery Image" />
+        </div>
+      </div>
+      <div class="pagination">
+        <span class="page" id="current-page">01</span>
+        <button class="prev">&#8592;</button>
+        <button class="next">&#8594;</button>
+        <span class="total">05</span>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="close">&times;</button>
+      <img src="" alt="Lightbox Image" class="lightbox-image" />
+      <button class="prev-light">&#8592;</button>
+      <button class="next-light">&#8594;</button>
+    </div>
     <div id="footer"></div>
     <script src="../js/main.js"></script>
     <script src="../js/include-components.js"></script>

@@ -38,6 +38,263 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+section.events,
+section.news {
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.events {
+  position: relative;
+}
+
+section.events::after {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 1px;
+  background-color: rgb(189, 189, 189);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section.events h2,
+section.news h2 {
+  text-align: center;
+  font-size: 32px;
+  margin: 80px 0;
+  color: black;
+}
+
+.event-container,
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.event-card,
+.news-card {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid rgb(189, 189, 189);
+  box-shadow: 2px 2px 2px 2px rgba(41, 41, 41, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 150px;
+}
+
+.event-card:hover,
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.25);
+}
+
+.event-image,
+.news-image {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.event-content,
+.news-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  flex: 1;
+}
+
+.event-date,
+.news-date {
+  font-size: 14px;
+  color: #0c898a;
+  margin: 0;
+  display: block;
+}
+
+.event-title,
+.news-title {
+  font-size: 14px;
+  color: black;
+  margin-top: 8px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.full-description {
+  display: none;
+}
+.event-actions,
+.news-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+.view-icon,
+.like-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+}
+
+.view-icon img,
+.like-icon img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.view-count,
+.like-count {
+  font-size: 15px;
+  user-select: none;
+}
+
+.pagination-dots {
+  margin-top: 24px;
+  margin-bottom: 54px;
+  text-align: center;
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  background-color: rgba(12, 137, 138, 0.6);
+  border-radius: 50%;
+  border: none;
+  margin: 0 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: #086061;
+}
+
+.events-dots .dot.active,
+.news-dots .dot.active {
+  background-color: #233022;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-card {
+  background: white;
+  padding: 30px 40px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.popup-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.popup-date {
+  color: #0c898a;
+}
+.popup-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.popup-actions img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.popup-actions img:hover {
+  transform: scale(1.2);
+}
+
+.popup-actions span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .event-container,
+  .news-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 0 40px;
+  }
+
+  .event-card,
+  .news-card {
+    height: 130px;
+  }
+
+  .event-image,
+  .news-image {
+    width: 35%;
+    height: 100%;
+  }
+
+  .event-content,
+  .news-content {
+    padding: 16px;
+  }
+
+  .event-title,
+  .news-title {
+    font-size: 16px;
+    margin-bottom: 23px;
+  }
+
+  .event-date,
+  .news-date {
+    font-size: 13px;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1100px) {
   .overlay-text h1 {
     font-size: 48px;
@@ -62,6 +319,79 @@
   .overlay-text p {
     font-size: 14px;
   }
+
+  .event-container,
+  .news-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 30px;
+  }
+
+  .event-card,
+  .news-card {
+    height: 120px;
+  }
+
+  .event-image,
+  .news-image {
+    width: 34%;
+    height: 100%;
+  }
+
+  .event-content,
+  .news-content {
+    padding: 14px;
+  }
+
+  .event-title,
+  .news-title {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .event-date,
+  .news-date {
+    font-size: 12px;
+  }
+
+  .view-count,
+  .like-count {
+    font-size: 13px;
+  }
+
+  .view-icon img,
+  .like-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .popup-card {
+    max-width: 460px;
+    padding: 22px 28px;
+  }
+
+  .popup-actions {
+    gap: 12px;
+  }
+
+  .popup-actions img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .popup-actions span {
+    font-size: 14px;
+  }
+
+  .popup-close {
+    font-size: 36px;
+  }
+
+  .dot {
+    width: 20px;
+    height: 20px;
+    margin: 0 6px;
+  }
 }
 
 @media (min-width: 671px) and (max-width: 767px) {
@@ -81,6 +411,90 @@
 
   #hero-events {
     height: 40vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .event-container,
+  .news-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 40px;
+  }
+
+  .event-card,
+  .news-card {
+    flex-direction: row;
+    height: 120px;
+  }
+
+  .event-image,
+  .news-image {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-content,
+  .news-content {
+    padding: 10px;
+  }
+
+  .event-title,
+  .news-title {
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 37px;
+  }
+
+  .event-date,
+  .news-date {
+    font-size: 12px;
+  }
+
+  .view-count,
+  .like-count {
+    font-size: 12px;
+  }
+
+  .view-icon img,
+  .like-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .popup-card {
+    max-width: 95%;
+    padding: 20px 14px;
+  }
+
+  .popup-actions {
+    gap: 10px;
+  }
+
+  .popup-actions img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .popup-actions span {
+    font-size: 13px;
+  }
+
+  .popup-close {
+    font-size: 32px;
+  }
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    margin: 0 4px;
+  }
+
+  section.events h2,
+  section.news h2 {
+    font-size: 24px;
+    margin: 40px 0;
   }
 }
 

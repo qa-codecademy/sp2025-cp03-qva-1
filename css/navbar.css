@@ -1,12 +1,20 @@
 #nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 100px;
   padding-right: 100px;
   justify-content: space-between;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 80px;
+  border-bottom: 1px solid #0c898a;
 }
 
 #nav-list {
@@ -40,8 +48,7 @@
   display: none;
 }
 
-/* Tablet styles */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1140px) {
   #nav-bar {
     padding-left: 40px;
     padding-right: 40px;
@@ -56,8 +63,7 @@
   }
 }
 
-/* Mobile styles */
-@media (max-width: 767px) {
+@media (max-width: 950px) {
   #nav-bar {
     display: flex;
     justify-content: space-between;
@@ -72,18 +78,18 @@
     width: 100%;
     display: none;
     position: absolute;
-    top: 70px;
+    top: 80px;
     left: 0;
     background-color: white;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding-bottom: 20px;
+    padding: 20px 0px;
+    align-items: center;
+    margin: 0;
   }
 
   #nav-list.show {
     display: flex;
-    margin-left: auto;
-    right: 0;
   }
 
   #hamburger-menu {

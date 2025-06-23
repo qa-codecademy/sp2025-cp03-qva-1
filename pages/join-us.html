@@ -6,10 +6,138 @@
     <title>Join Us</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/join-us.css" />
   </head>
   <body>
     <div id="navbar"></div>
-    <script src="../js/main.js"></script>
+    <section class="join-us-section">
+      <div class="join-header">
+        <h1>Join Us</h1>
+        <p class="welcome-text">
+          Are you passionate about Italy, culture, food and community? We're
+          always looking for motivated individuals to join our mission. Whether
+          you're a student, a professional, or just a curious mind — there's a
+          place for you at Quo Vadis Ad Astra! Fill out the form below to become
+          a part of something inspiring.
+        </p>
+      </div>
+      <div class="container">
+        <div class="membership-form-wrapper">
+          <form class="membership-form" id="membershipForm">
+            <h2>Personal Information</h2>
+            <label for="firstName">FIRST NAME</label>
+            <input type="text" id="firstName" name="firstName" required />
+
+            <label for="lastName">LAST NAME</label>
+            <input type="text" id="lastName" name="lastName" required />
+
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" />
+
+            <label for="dob">DATE OF BIRTH</label>
+            <input type="date" id="dob" name="dob" />
+
+            <label for="city">CITY / COUNTRY</label>
+            <input type="text" id="city" name="city" />
+
+            <h2>Education / Background</h2>
+            <label for="educationLevel">EDUCATION LEVEL</label>
+            <select id="educationLevel" name="educationLevel">
+              <option value="">-- Select --</option>
+              <option>High School</option>
+              <option>Bachelor's</option>
+              <option>Master's</option>
+              <option>PhD</option>
+              <option>Other</option>
+            </select>
+
+            <label for="proffession">FIELD OF STUDY / PROFESSION</label>
+            <input type="text" id="proffession" name="proffession" />
+
+            <label for="school">SCHOOL / UNIVERSITY / WORKPLACE</label>
+            <input type="text" id="school" name="school" />
+
+            <h2>Motivation & Interests</h2>
+            <label for="motivation">WHY DO YOU WANT TO JOIN?</label>
+            <textarea id="motivation" name="motivation" rows="4"></textarea>
+
+            <h2>What are your interests?</h2>
+            <label
+              ><input
+                type="checkbox"
+                name="interests"
+                value="food"
+              />FOOD</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="interests"
+                value="projects"
+              />WORKING ON PROJECTS</label
+            >
+            <label
+              ><input type="checkbox" name="interests" value="events" />EVENT
+              ORGANIZING</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="interests"
+                value="marketing"
+              />MARKETING</label
+            >
+
+            <h2>Availability</h2>
+            <p class="activities">Are you available to help with activities?</p>
+            <label
+              ><input type="radio" name="available" value="yes" /> YES</label
+            >
+            <label><input type="radio" name="available" value="no" /> NO</label>
+            <label
+              ><input type="radio" name="available" value="maybe" />
+              MAYBE</label
+            >
+
+            <h2>Extras</h2>
+            <label for="cv">UPLOAD CV</label>
+            <input type="file" id="cv" name="cv" />
+
+            <label for="cv">UPLOAD PHOTO</label>
+            <input type="file" id="photo" name="photo" />
+
+            <label for="social">SOCIAL MEDIA (optional)</label>
+            <input
+              type="url"
+              id="social"
+              name="social"
+              placeholder="https://"
+            />
+
+            <label class="checkbox-label">
+              <input type="checkbox" required /> I agree to the terms and
+              conditions
+            </label>
+
+            <button type="submit">SUBMIT</button>
+          </form>
+
+          <div class="thank-you-message hidden" id="thankYouMessage">
+            <h2>Thank You!</h2>
+            <p>
+              Your application has been received. We’re thrilled that you want
+              to join us! We’ll be in touch soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="../js/join-us.js"></script>
     <script src="../js/include-components.js"></script>
   </body>
 </html>

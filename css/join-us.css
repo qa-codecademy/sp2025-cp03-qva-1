@@ -1,0 +1,227 @@
+.join-us-section {
+  border-top: 1px solid #0c898a;
+}
+
+.join-header {
+  max-width: 1000px;
+  margin: 80px auto 40px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.join-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0c898a;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.join-header .welcome-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 55px 70px;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.membership-form-wrapper {
+  background-color: rgba(35, 48, 34, 0.2);
+  padding: 55px 70px;
+  border-radius: 10px;
+}
+
+.membership-form-wrapper h2 {
+  color: black;
+  font-size: 32px;
+  text-align: left;
+  margin: 25px 0 25px 0;
+}
+
+.membership-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.membership-form label {
+  margin-bottom: 5px;
+  color: #0c898a;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.name-row {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.membership-form input:not([type="checkbox"]):not([type="radio"]),
+.membership-form select,
+.membership-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #233022;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.membership-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.membership-form fieldset {
+  border: none;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.membership-form fieldset label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0c898a;
+}
+
+.membership-form input[type="checkbox"],
+.membership-form input[type="radio"] {
+  margin-right: 8px;
+}
+
+.activities {
+  margin-top: 0;
+}
+
+.checkbox-label {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.membership-form button {
+  align-self: flex-end;
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #0c898a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.membership-form button:hover {
+  background-color: #086061;
+}
+
+.thank-you-message {
+  margin-top: 30px;
+  background-color: #e3e5e4;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.thank-you-message h2 {
+  color: #0c898a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .join-header {
+    padding: 0 40px;
+    margin: 60px auto 30px auto;
+  }
+
+  .join-header h1 {
+    font-size: 36px;
+  }
+
+  .join-header .welcome-text {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .container,
+  .membership-form-wrapper {
+    padding: 40px;
+  }
+
+  .membership-form-wrapper h2 {
+    font-size: 28px;
+    margin: 20px 0;
+  }
+
+  .membership-form button {
+    width: 130px;
+    height: 38px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .join-header {
+    padding: 0 20px;
+    margin: 50px auto 30px auto;
+  }
+
+  .join-header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .join-header .welcome-text {
+    font-size: 16px;
+  }
+
+  .container,
+  .membership-form-wrapper {
+    padding: 25px;
+  }
+
+  .membership-form-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .name-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .membership-form button {
+    align-self: center;
+    width: 120px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .thank-you-message {
+    padding: 20px;
+  }
+
+  .thank-you-message h2 {
+    font-size: 22px;
+  }
+}

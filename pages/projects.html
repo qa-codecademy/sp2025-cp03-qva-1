@@ -18,8 +18,24 @@
       </div>
     </div>
     <section class="project-page">
+      <div class="project-controls">
+        <input
+          type="text"
+          id="project-search"
+          placeholder="Search by title..."
+          aria-label="Search projects by title"
+        />
+        <select id="project-sort" aria-label="Sort projects">
+          <option value="default">Sort by: Default</option>
+          <option value="title-asc">Title A–Z</option>
+          <option value="title-desc">Title Z–A</option>
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+
       <div class="project-container">
-        <div class="project-box">
+        <div class="project-box" data-date="2025-06-01">
           <img src="../assets/images/project1.jpeg" alt="teamwork" />
           <h3>Working in teams</h3>
           <p>
@@ -29,7 +45,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2025-05-01">
           <img src="../assets/images/project2.jpg" alt="man thinking" />
           <h3>Creative ideas</h3>
           <p>
@@ -39,7 +55,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2025-07-01">
           <img src="../assets/images/project3.jpg" alt="picnic" />
           <h3>Going on picnic</h3>
           <p>
@@ -49,7 +65,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2025-08-01">
           <img src="../assets/images/project4.jpg" alt="italian food" />
           <h3>Cooking Italian food</h3>
           <p>
@@ -59,7 +75,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2024-06-01">
           <img src="../assets/images/project5.jpg" alt="teamwork" />
           <h3>Workshop</h3>
           <p>
@@ -68,7 +84,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2025-02-01">
           <img src="../assets/images/project6.jpg" alt="italian project" />
           <h3>Making Italian projects</h3>
           <p>
@@ -78,7 +94,7 @@
           </p>
           <button class="view-details">VIEW DETAILS</button>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-date="2025-03-01">
           <img src="../assets/images/project7.png" alt="man thinking" />
           <h3>Creative way of thinking</h3>
           <p>

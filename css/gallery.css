@@ -62,10 +62,12 @@ h1 span {
   background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 .lightbox img {
   max-width: 80%;
   max-height: 80%;
+  margin-top: 80px;
 }
 .lightbox button {
   position: absolute;
@@ -116,6 +118,10 @@ h1 span {
 }
 
 @media (min-width: 671px) and (max-width: 767px) {
+  .gallery-section {
+    margin: 80px 80px;
+  }
+
   .gallery-title h1 {
     font-size: 28px;
   }
@@ -127,6 +133,10 @@ h1 span {
 }
 
 @media (max-width: 670px) {
+  .gallery-section {
+    margin: 40px 40px;
+  }
+
   .gallery-title {
     display: flex;
     justify-content: center;
@@ -141,5 +151,19 @@ h1 span {
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
+  }
+
+  .pagination {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    font-size: 20px;
   }
 }

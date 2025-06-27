@@ -27,6 +27,27 @@
   margin-bottom: 15px;
 }
 
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-title {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.nav-columns {
+  display: flex;
+  gap: 60px;
+}
+
+.nav-columns .nav-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .icon {
   width: 16px;
   vertical-align: middle;
@@ -50,14 +71,14 @@
   font-size: 14px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1500px) {
   .footer-container {
     padding-left: 60px;
     padding-right: 60px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1300px) {
   .footer {
     padding-top: 30px;
   }
@@ -71,22 +92,7 @@
     padding-bottom: 20px;
   }
 
-  .footer-container > div:nth-child(1) {
-    flex-basis: 50%;
-    text-align: center;
-  }
-
-  .footer-container > div:nth-child(2) {
-    flex-basis: 50%;
-    text-align: center;
-  }
-
-  .footer-container > div:nth-child(3) {
-    flex-basis: 50%;
-    text-align: center;
-  }
-
-  .footer-container > div:nth-child(4) {
+  .footer-container > div {
     flex-basis: 50%;
     text-align: center;
   }
@@ -102,6 +108,12 @@
 
   .icon-link {
     margin-right: 15px;
+  }
+
+  .nav-columns {
+    justify-content: flex-start;
+    text-align: start;
+    gap: 40px;
   }
 }
 
@@ -135,5 +147,11 @@
 
   .icon-link {
     margin-right: 10px;
+  }
+
+  .nav-columns {
+    justify-content: flex-start;
+    text-align: start;
+    gap: 20px;
   }
 }

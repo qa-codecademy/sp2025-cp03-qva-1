@@ -63,11 +63,15 @@ h1 span {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  touch-action: pan-y;
 }
 .lightbox img {
   max-width: 80%;
   max-height: 80%;
   margin-top: 80px;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
 }
 .lightbox button {
   position: absolute;
@@ -165,5 +169,50 @@ h1 span {
 
   .pagination button {
     font-size: 20px;
+  }
+
+  .lightbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+  }
+
+  .lightbox .prev-light,
+  .lightbox .next-light {
+    position: absolute;
+    top: 120px;
+    font-size: 28px;
+    color: white;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .lightbox .prev-light {
+    left: 20px;
+  }
+
+  .lightbox .next-light {
+    right: 20px;
+  }
+
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    color: white;
+    z-index: 11;
+  }
+
+  .lightbox .lightbox-image {
+    max-width: 90%;
+    max-height: 70%;
+    object-fit: contain;
   }
 }

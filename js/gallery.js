@@ -110,4 +110,35 @@ function addNewImage(imageSrc) {
 
 window.addEventListener("resize", renderGallery);
 
+function enableMobileSwipe() {
+  if (window.innerWidth <= 768) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+    lightbox.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    function handleTouchStart(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }
+
+    function handleTouchEnd(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }
+
+    function handleSwipe() {
+      const threshold = 50;
+      if (touchEndX < touchStartX - threshold) {
+        changeLightboxImage(1);
+      } else if (touchEndX > touchStartX + threshold) {
+        changeLightboxImage(-1);
+      }
+    }
+  }
+}
+
 renderGallery();
+enableMobileSwipe();

@@ -17,7 +17,7 @@ joinForm.addEventListener("submit", function (e) {
   const city = joinForm.querySelector("#city");
   const social = joinForm.querySelector("#social");
 
-  const nameRegex = /^[A-Za-zÀ-ž\s'-]{2,}$/;
+  const nameRegex = /^[\p{L}\s'-]{2,}$/u;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const urlRegex = /^https?:\/\/.+$/;
 

@@ -22,22 +22,28 @@
       <form class="form">
         <div class="name-row">
           <div class="input-group">
-            <label class="label" for="first-name">FIRST NAME</label>
+            <label class="label" for="first-name">FIRST NAME*</label>
             <input type="text" name="first-name" class="first-name" required />
           </div>
           <div class="input-group">
-            <label class="label" for="last-name">LAST NAME</label>
+            <label class="label" for="last-name">LAST NAME*</label>
             <input type="text" name="last-name" class="last-name" required />
           </div>
         </div>
-        <label class="label" for="email">EMAIL</label>
+        <label class="label" for="email">EMAIL*</label>
         <input type="email" name="email" class="email" required />
-        <label class="label" for="phone">PHONE</label>
+        <label class="label" for="phone">PHONE*</label>
         <input type="tel" name="phone" class="phone" required />
         <label class="label" for="message">MESSAGE</label>
         <textarea name="message" class="message" cols="20" rows="5"></textarea>
         <button type="submit">SUBMIT</button>
       </form>
+    </div>
+    <div class="thank-you-message hidden" id="contactThankYou">
+      <div class="thank-you-inner">
+        <h2>Thank You!</h2>
+        <p>Your message has been received. We’ll get back to you shortly!</p>
+      </div>
     </div>
     <div class="contact-info">
       <div class="contact-box">

@@ -112,6 +112,42 @@ h2:nth-child(2) {
   background-color: #086061;
 }
 
+.thank-you-message {
+  background-color: rgba(35, 48, 34, 0.2);
+  padding: 55px 70px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.thank-you-inner {
+  background-color: #e3e5e4;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.thank-you-message h2 {
+  font-size: 32px;
+  color: #0c898a;
+  margin-bottom: 10px;
+}
+
+.thank-you-message p {
+  font-size: 16px;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 .contact-info {
   display: flex;
   justify-content: center;
@@ -185,6 +221,27 @@ h2:nth-child(2) {
 
   .location-map iframe {
     height: 420px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .thank-you-message {
+    padding: 40px 50px;
+    max-width: 90%;
+    margin: 80px auto;
+  }
+
+  .thank-you-inner {
+    padding: 25px 20px;
+  }
+
+  .thank-you-message h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .thank-you-message p {
+    font-size: 14px;
   }
 }
 
@@ -407,6 +464,25 @@ h2:nth-child(2) {
     align-self: center;
     width: 100%;
     max-width: 160px;
+  }
+
+  .thank-you-message {
+    padding: 25px 20px;
+    max-width: 95%;
+    margin: 60px auto;
+  }
+
+  .thank-you-inner {
+    padding: 20px 15px;
+  }
+
+  .thank-you-message h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .thank-you-message p {
+    font-size: 13px;
   }
 
   .contact-info {

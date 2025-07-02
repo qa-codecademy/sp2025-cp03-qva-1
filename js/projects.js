@@ -19,6 +19,33 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentVisibleCount = 0;
   let filteredProjects = [...allProjectBoxes];
 
+  function attachViewDetailsListeners() {
+    document.querySelectorAll(".view-details").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const card = e.target.closest(".project-box");
+
+        const title = card.querySelector("h3").textContent;
+        const imgSrc = card.querySelector("img").src;
+        const shortDesc = card.querySelector("p").textContent;
+
+        const longDesc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
+
+        titleEl.textContent = title;
+        imageEl.src = imgSrc;
+        para1El.textContent = shortDesc;
+        para2El.textContent = longDesc;
+
+        history.pushState({ view: "details" }, "", "#project-details");
+
+        projectPage.style.display = "none";
+        hero.style.display = "none";
+        projectDetails.classList.add("active");
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
   function updateDisplay() {
     projectContainer.innerHTML = "";
     const visible = filteredProjects.slice(0, currentVisibleCount);
@@ -37,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showMoreButton.classList.remove("disabled");
       showMoreButton.textContent = "SHOW MORE";
     }
+
+    attachViewDetailsListeners();
   }
 
   function showNextProjects() {
@@ -96,33 +125,17 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", filterAndSortProjects);
   sortSelect.addEventListener("change", filterAndSortProjects);
 
-  document.querySelectorAll(".view-details").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const card = e.target.closest(".project-box");
-
-      const title = card.querySelector("h3").textContent;
-      const imgSrc = card.querySelector("img").src;
-      const shortDesc = card.querySelector("p").textContent;
-
-      const longDesc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
-
-      titleEl.textContent = title;
-      imageEl.src = imgSrc;
-      para1El.textContent = shortDesc;
-      para2El.textContent = longDesc;
-
-      projectPage.style.display = "none";
-      hero.style.display = "none";
-      projectDetails.classList.add("active");
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  });
-
   backLink.addEventListener("click", (e) => {
     e.preventDefault();
-    projectDetails.classList.remove("active");
-    projectPage.style.display = "flex";
-    hero.style.display = "flex";
+    history.back();
+  });
+
+  window.addEventListener("popstate", (e) => {
+    if (projectDetails.classList.contains("active")) {
+      projectDetails.classList.remove("active");
+      projectPage.style.display = "flex";
+      hero.style.display = "flex";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   });
 });

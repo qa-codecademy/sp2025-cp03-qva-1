@@ -522,4 +522,9 @@ section.news h2 {
   .hero-overlay {
     background: rgba(0, 0, 0, 0.5);
   }
+
+  .event-title,
+  .news-title {
+    margin-bottom: 20px;
+  }
 }

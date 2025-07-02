@@ -1,6 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cardsPerPage = 4;
 
+  function generatePaginationDots(section) {
+    const cardSelector = section === "event" ? ".event-card" : ".news-card";
+    const containerSelector =
+      section === "event" ? ".event-container" : ".news-container";
+    const dotsWrapperSelector =
+      section === "event" ? ".events-dots" : ".news-dots";
+
+    const container = document.querySelector(containerSelector);
+    const cards = container.querySelectorAll(cardSelector);
+    const dotsWrapper = document.querySelector(dotsWrapperSelector);
+
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    dotsWrapper.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const dot = document.createElement("button");
+      dot.classList.add("dot", section === "event" ? "event-dot" : "news-dot");
+      dot.dataset.section = section;
+      dot.dataset.page = i;
+      if (i === 1) dot.classList.add("active");
+
+      dot.addEventListener("click", () => {
+        showPage(section, i);
+      });
+
+      dotsWrapper.appendChild(dot);
+    }
+  }
+
   function showPage(section, page) {
     const cardSelector = section === "event" ? ".event-card" : ".news-card";
     const containerSelector =
@@ -25,13 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll(".dot").forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const section = dot.dataset.section;
-      const page = parseInt(dot.dataset.page);
-      showPage(section, page);
-    });
-  });
+  generatePaginationDots("event");
+  generatePaginationDots("news");
 
   showPage("event", 1);
   showPage("news", 1);

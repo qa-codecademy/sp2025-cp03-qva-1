@@ -180,11 +180,12 @@
 
   .text-content h2 {
     font-size: 26px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .text-content p {
     font-size: 14px;
+    margin-bottom: 14px;
   }
 }
 

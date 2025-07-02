@@ -1,6 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cardsPerPage = 3;
 
+  function generateMemberDots() {
+    const cards = document.querySelectorAll(".member-card");
+    const dotsWrapper = document.querySelector(".pagination-dots");
+
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    dotsWrapper.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const dot = document.createElement("button");
+      dot.classList.add("dot");
+      dot.dataset.page = i;
+      if (i === 1) dot.classList.add("active");
+
+      dot.addEventListener("click", () => {
+        showMembersPage(i);
+      });
+
+      dotsWrapper.appendChild(dot);
+    }
+  }
+
   function showMembersPage(page) {
     const cards = document.querySelectorAll(".member-card");
     const dots = document.querySelectorAll(".dot");
@@ -18,17 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll(".dot").forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const page = parseInt(dot.dataset.page);
-      const cards = document.querySelectorAll(".member-card");
-      const start = (page - 1) * cardsPerPage;
-
-      if (start < cards.length) {
-        showMembersPage(page);
-      }
-    });
-  });
-
+  generateMemberDots();
   showMembersPage(1);
 });

@@ -3,6 +3,8 @@ fetch("../components/navbar.html")
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
+    setupLanguageDropdown();
+
     const links = document.querySelectorAll(".nav-link");
 
     links.forEach((link) => {
@@ -30,4 +32,5 @@ fetch("../components/footer.html")
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
+    setupFlagListeners();
   });

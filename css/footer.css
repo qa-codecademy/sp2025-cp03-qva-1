@@ -48,6 +48,35 @@
   padding-left: 0;
 }
 
+.footer-language-flags {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding-left: 0;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.footer-language-flags li {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.footer-language-flags img.lang-flag {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  display: block;
+}
+
+.footer-language-flags img.lang-flag:hover {
+  border-color: #0c898a;
+  opacity: 1;
+}
+
 .icon {
   width: 16px;
   vertical-align: middle;
@@ -78,7 +107,7 @@
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .footer {
     padding-top: 30px;
   }

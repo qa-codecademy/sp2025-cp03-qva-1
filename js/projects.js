@@ -1,3 +1,13 @@
+let languageMap = {};
+const lang = localStorage.getItem("lang") || "en";
+console.log(lang);
+
+fetch(`../lang/${lang}.json`)
+  .then((res) => res.json())
+  .then((translations) => {
+    languageMap = translations;
+  });
+
 document.addEventListener("DOMContentLoaded", () => {
   const allProjectBoxes = Array.from(document.querySelectorAll(".project-box"));
   const projectContainer = document.querySelector(".project-container");
@@ -20,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let filteredProjects = [...allProjectBoxes];
 
   function attachViewDetailsListeners() {
-    document.querySelectorAll(".view-details").forEach((btn) => {
+    document.querySelectorAll(".view-details").forEach((btn, index) => {
       btn.addEventListener("click", (e) => {
         const card = e.target.closest(".project-box");
 
@@ -28,12 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const imgSrc = card.querySelector("img").src;
         const shortDesc = card.querySelector("p").textContent;
 
-        const longDesc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
-
+        titleEl.setAttribute("data-i18n", `project_title_${index}`);
         titleEl.textContent = title;
         imageEl.src = imgSrc;
         para1El.textContent = shortDesc;
-        para2El.textContent = longDesc;
+        para2El.setAttribute("data-i18n", "project_long_description");
+        para2El.textContent = languageMap["project_long_description"];
 
         history.pushState({ view: "details" }, "", "#project-details");
 
@@ -47,25 +57,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateDisplay() {
-    projectContainer.innerHTML = "";
-    const visible = filteredProjects.slice(0, currentVisibleCount);
+    const language = localStorage.getItem("lang") || "en";
+    fetch(`../lang/${language}.json`)
+      .then((res) => res.json())
+      .then((translations) => {
+        projectContainer.innerHTML = "";
+        const visible = filteredProjects.slice(0, currentVisibleCount);
 
-    visible.forEach((card) => {
-      card.style.display = "flex";
-      projectContainer.appendChild(card);
-    });
+        visible.forEach((card, index) => {
+          const title = card.querySelector("h3");
+          const text = card.querySelector("p");
+          const btn = card.querySelector("button");
 
-    if (currentVisibleCount >= filteredProjects.length) {
-      showMoreButton.disabled = true;
-      showMoreButton.classList.add("disabled");
-      showMoreButton.textContent = "NO MORE PROJECTS";
-    } else {
-      showMoreButton.disabled = false;
-      showMoreButton.classList.remove("disabled");
-      showMoreButton.textContent = "SHOW MORE";
-    }
+          title.textContent = translations[`project_title_${index}`];
+          text.textContent = translations[`project_text_${index}`];
+          btn.textContent = translations["view_details"];
 
-    attachViewDetailsListeners();
+          card.style.display = "flex";
+          projectContainer.appendChild(card);
+        });
+
+        if (currentVisibleCount >= filteredProjects.length) {
+          showMoreButton.disabled = true;
+          showMoreButton.classList.add("disabled");
+          showMoreButton.setAttribute("data-i18n", "no_more_projects");
+          showMoreButton.textContent = translations["no_more_projects"];
+        } else {
+          showMoreButton.disabled = false;
+          showMoreButton.classList.remove("disabled");
+          showMoreButton.setAttribute("data-i18n", "show_more");
+          showMoreButton.textContent = "SHOW MORE";
+        }
+
+        attachViewDetailsListeners();
+      });
   }
 
   function showNextProjects() {

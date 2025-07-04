@@ -12,46 +12,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
-  const firstNameInput = form.querySelector(".first-name");
-  const lastNameInput = form.querySelector(".last-name");
-  const emailInput = form.querySelector(".email");
-  const phoneInput = form.querySelector(".phone");
-
-  const firstName = firstNameInput.value.trim();
-  const lastName = lastNameInput.value.trim();
-  const email = emailInput.value.trim();
-  const phone = phoneInput.value.trim();
-
-  form.querySelectorAll(".error-message").forEach((el) => el.remove());
-
-  let isValid = true;
-  let firstInvalidField = null;
-
-  if (!nameRegex.test(firstName)) {
-    isValid = false;
-    showError(firstNameInput, "Only letters allowed.");
-    if (!firstInvalidField) firstInvalidField = firstNameInput;
-  }
-
-  if (!nameRegex.test(lastName)) {
-    isValid = false;
-    showError(lastNameInput, "Only letters allowed.");
-    if (!firstInvalidField) firstInvalidField = lastNameInput;
-  }
-
-  if (!emailRegex.test(email)) {
-    isValid = false;
-    showError(emailInput, "Invalid email format.");
-    if (!firstInvalidField) firstInvalidField = emailInput;
-  }
-
-  const digitsOnly = phone.replace(/\D/g, "");
-  if (digitsOnly.length < 7 || digitsOnly.length > 15) {
-    isValid = false;
-    showError(phoneInput, "Phone must be 7–15 digits.");
-    if (!firstInvalidField) firstInvalidField = phoneInput;
-  }
+  const { isValid, firstInvalidField } = window.validateForm({ silent: false });
 
   if (!isValid) {
     firstInvalidField.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -84,3 +45,90 @@ function showError(inputElement, message) {
   error.textContent = message;
   inputElement.insertAdjacentElement("afterend", error);
 }
+
+window.validateForm = function (options = { silent: false }) {
+  const firstNameInput = form.querySelector(".first-name");
+  const lastNameInput = form.querySelector(".last-name");
+  const emailInput = form.querySelector(".email");
+  const phoneInput = form.querySelector(".phone");
+
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  const email = emailInput.value.trim();
+  const phone = phoneInput.value.trim();
+
+  let isValid = true;
+  let firstInvalidField = null;
+
+  function updateOrShowError(input, key, fallback) {
+    const existingError = input.nextElementSibling;
+    const translatedMessage = window.languageMap[key] || fallback;
+
+    if (!nameRegex.test(firstName) && input === firstNameInput) {
+      isValid = false;
+      if (existingError?.classList.contains("error-message")) {
+        existingError.textContent = translatedMessage;
+      } else if (!options.silent) {
+        showError(input, translatedMessage);
+      }
+      if (!firstInvalidField) firstInvalidField = input;
+    }
+
+    if (!nameRegex.test(lastName) && input === lastNameInput) {
+      isValid = false;
+      if (existingError?.classList.contains("error-message")) {
+        existingError.textContent = translatedMessage;
+      } else if (!options.silent) {
+        showError(input, translatedMessage);
+      }
+      if (!firstInvalidField) firstInvalidField = input;
+    }
+
+    if (!emailRegex.test(email) && input === emailInput) {
+      isValid = false;
+      if (existingError?.classList.contains("error-message")) {
+        existingError.textContent = translatedMessage;
+      } else if (!options.silent) {
+        showError(input, translatedMessage);
+      }
+      if (!firstInvalidField) firstInvalidField = input;
+    }
+
+    const digitsOnly = phone.replace(/\D/g, "");
+    if (
+      (digitsOnly.length < 7 || digitsOnly.length > 15) &&
+      input === phoneInput
+    ) {
+      isValid = false;
+      if (existingError?.classList.contains("error-message")) {
+        existingError.textContent = translatedMessage;
+      } else if (!options.silent) {
+        showError(input, translatedMessage);
+      }
+      if (!firstInvalidField) firstInvalidField = input;
+    }
+  }
+
+  if (!options.silent) {
+    form.querySelectorAll(".error-message").forEach((el) => el.remove());
+  }
+
+  updateOrShowError(
+    firstNameInput,
+    "error_only_letters",
+    "Only letters allowed."
+  );
+  updateOrShowError(
+    lastNameInput,
+    "error_only_letters",
+    "Only letters allowed."
+  );
+  updateOrShowError(emailInput, "error_invalid_email", "Invalid email format.");
+  updateOrShowError(
+    phoneInput,
+    "error_invalid_phone",
+    "Phone must be 7–15 digits."
+  );
+
+  return { isValid, firstInvalidField };
+};

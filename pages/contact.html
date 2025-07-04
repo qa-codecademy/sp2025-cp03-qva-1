@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <title data-i18n="contact_title">Contact</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/contact.css" />
@@ -13,36 +13,42 @@
     <div id="hero-contact">
       <div class="hero-overlay"></div>
       <div class="overlay-text">
-        <h1>Contact</h1>
+        <h1 data-i18n="contact_heading">Contact</h1>
       </div>
     </div>
     <div class="contact-form">
-      <h2><span>Get in touch</span></h2>
-      <h2><b>Contact us</b></h2>
+      <h2><span data-i18n="contact_get_in_touch">Get in touch</span></h2>
+      <h2><b data-i18n="contact_us">Contact us</b></h2>
       <form class="form">
         <div class="name-row">
           <div class="input-group">
-            <label class="label" for="first-name">FIRST NAME*</label>
+            <label class="label" for="first-name" data-i18n="first_name"
+              >FIRST NAME*</label
+            >
             <input type="text" name="first-name" class="first-name" required />
           </div>
           <div class="input-group">
-            <label class="label" for="last-name">LAST NAME*</label>
+            <label class="label" for="last-name" data-i18n="last_name"
+              >LAST NAME*</label
+            >
             <input type="text" name="last-name" class="last-name" required />
           </div>
         </div>
-        <label class="label" for="email">EMAIL*</label>
+        <label class="label" for="email" data-i18n="email">EMAIL*</label>
         <input type="email" name="email" class="email" required />
-        <label class="label" for="phone">PHONE*</label>
+        <label class="label" for="phone" data-i18n="phone">PHONE*</label>
         <input type="tel" name="phone" class="phone" required />
-        <label class="label" for="message">MESSAGE</label>
+        <label class="label" for="message" data-i18n="message">MESSAGE</label>
         <textarea name="message" class="message" cols="20" rows="5"></textarea>
-        <button type="submit">SUBMIT</button>
+        <button type="submit" data-i18n="submit">SUBMIT</button>
       </form>
     </div>
     <div class="thank-you-message hidden" id="contactThankYou">
       <div class="thank-you-inner">
-        <h2>Thank You!</h2>
-        <p>Your message has been received. We’ll get back to you shortly!</p>
+        <h2 data-i18n="thank_you_title">Thank You!</h2>
+        <p data-i18n="thank_you_text">
+          Your message has been received. We’ll get back to you shortly!
+        </p>
       </div>
     </div>
     <div class="contact-info">
@@ -52,7 +58,7 @@
           alt="phone-icon"
           class="contact-icon"
         />
-        <h3>EMERGENCY</h3>
+        <h3 data-i18n="emergency">EMERGENCY</h3>
         <p>+389 (0)78 40 46 56</p>
       </div>
       <div class="contact-box">
@@ -61,8 +67,10 @@
           alt="location-icon"
           class="contact-icon location"
         />
-        <h3>LOCATION</h3>
-        <p>GTC Global, floor 2, No.14 / 2400 Strumica, North Macedonia</p>
+        <h3 data-i18n="location">LOCATION</h3>
+        <p data-i18n="location_address">
+          GTC Global, floor 2, No.14 / 2400 Strumica, North Macedonia
+        </p>
       </div>
       <div class="contact-box">
         <img
@@ -70,7 +78,7 @@
           alt="envelope-icon"
           class="contact-icon"
         />
-        <h3>EMAIL</h3>
+        <h3 data-i18n="email_label">EMAIL</h3>
         <p>quovadis3377@yahoo.com</p>
       </div>
       <div class="contact-box">
@@ -79,8 +87,8 @@
           alt="clock-icon"
           class="contact-icon"
         />
-        <h3>WORKING HOURS</h3>
-        <p>Mon-Sat 09:00 - 20:00</p>
+        <h3 data-i18n="working_hours">WORKING HOURS</h3>
+        <p data-i18n="working_hours_time">Mon-Sat 09:00 - 20:00</p>
       </div>
     </div>
     <div class="location-map">

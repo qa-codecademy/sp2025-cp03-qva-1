@@ -1,3 +1,55 @@
+window.languageMap = {};
+
+function applyTranslations() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (window.languageMap[key]) {
+      el.textContent = window.languageMap[key];
+    }
+  });
+
+  const projectDetailsInput = document.querySelector("#project-search");
+  if (projectDetailsInput && window.languageMap["projects_search_input"]) {
+    projectDetailsInput.placeholder =
+      window.languageMap["projects_search_input"];
+  }
+
+  const pageTitle = document.querySelector("title[data-i18n]");
+  if (pageTitle) {
+    const titleKey = pageTitle.getAttribute("data-i18n");
+    if (window.languageMap[titleKey]) {
+      pageTitle.textContent = window.languageMap[titleKey];
+    }
+  }
+}
+
+function loadLanguage(lang) {
+  fetch(`../lang/${lang}.json`)
+    .then((res) => res.json())
+    .then((translations) => {
+      window.languageMap = translations;
+      applyTranslations();
+
+      document.dispatchEvent(new Event("languageChanged"));
+
+      if (typeof window.validateForm === "function") {
+        window.validateForm({ silent: true });
+      }
+      if (typeof window.validateJoinForm === "function") {
+        window.validateJoinForm({ silent: true });
+      }
+    })
+    .catch((error) => {
+      console.error("Failed to load language file:", error);
+    });
+}
+
+function changeLanguage(lang) {
+  if (!lang) return;
+  localStorage.setItem("lang", lang);
+  loadLanguage(lang);
+}
+
 function setupLanguageDropdown() {
   const langToggle = document.getElementById("lang-toggle");
   const langOptions = document.getElementById("lang-options");
@@ -36,39 +88,6 @@ function setupFlagListeners() {
       }
     });
   });
-}
-
-function changeLanguage(lang) {
-  if (!lang) return;
-  localStorage.setItem("lang", lang);
-  loadLanguage(lang);
-}
-
-function loadLanguage(lang) {
-  fetch(`../lang/${lang}.json`)
-    .then((res) => res.json())
-    .then((translations) => {
-      const projectDetailsInput = document.querySelector("#project-search");
-      projectDetailsInput.placeholder = translations["projects_search_input"];
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[key]) {
-          el.textContent = translations[key];
-        }
-      });
-
-      const pageTitle = document.querySelector("title[data-i18n]");
-      if (pageTitle) {
-        const titleKey = pageTitle.getAttribute("data-i18n");
-        if (translations[titleKey]) {
-          pageTitle.textContent = translations[titleKey];
-        }
-      }
-      trimParagraphs();
-    })
-    .catch((error) => {
-      console.error("Failed to load language file:", error);
-    });
 }
 
 function trimParagraphs() {

@@ -14,9 +14,14 @@
   font-size: 64px;
 }
 
-h1 span {
+.word-photo {
   font-weight: 100;
   color: rgba(35, 48, 34, 0.4);
+}
+
+.word-gallery {
+  font-weight: 600;
+  color: #000;
 }
 
 .gallery-grid {

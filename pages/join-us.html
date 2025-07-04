@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join Us</title>
+    <title data-i18n="join_title">Join Us</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/join-us.css" />
@@ -12,8 +12,8 @@
     <div id="navbar"></div>
     <section class="join-us-section">
       <div class="join-header">
-        <h1>Join Us</h1>
-        <p class="welcome-text">
+        <h1 data-i18n="join_heading">Join Us</h1>
+        <p class="welcome-text" data-i18n="join_intro">
           Are you passionate about Italy, culture, food and community? We're
           always looking for motivated individuals to join our mission. Whether
           you're a student, a professional, or just a curious mind — there's a
@@ -24,100 +24,107 @@
       <div class="container">
         <div class="membership-form-wrapper">
           <form class="membership-form" id="membershipForm">
-            <h2>Personal Information</h2>
-            <label for="firstName">FIRST NAME*</label>
+            <h2 data-i18n="personal_info">Personal Information</h2>
+            <label for="firstName" data-i18n="first_name">FIRST NAME*</label>
             <input type="text" id="firstName" name="firstName" required />
             <div class="error-message" id="firstNameError"></div>
 
-            <label for="lastName">LAST NAME*</label>
+            <label for="lastName" data-i18n="last_name">LAST NAME*</label>
             <input type="text" id="lastName" name="lastName" required />
             <div class="error-message" id="lastNameError"></div>
 
-            <label for="address">ADDRESS*</label>
+            <label for="address" data-i18n="address">ADDRESS*</label>
             <input type="text" id="address" name="address" required />
             <div class="error-message" id="addressError"></div>
 
-            <label for="email">EMAIL ADDRESS*</label>
+            <label for="email" data-i18n="email">EMAIL*</label>
             <input type="email" id="email" name="email" required />
             <div class="error-message" id="emailError"></div>
 
-            <label for="phone">PHONE NUMBER*</label>
+            <label for="phone" data-i18n="phone">PHONE*</label>
             <input type="tel" id="phone" name="phone" required />
             <div class="error-message" id="phoneError"></div>
 
-            <label for="dob">DATE OF BIRTH</label>
+            <label for="dob" data-i18n="dob">DATE OF BIRTH</label>
             <input type="date" id="dob" name="dob" />
 
-            <label for="city">CITY / COUNTRY</label>
+            <label for="city" data-i18n="city">CITY / COUNTRY</label>
             <input type="text" id="city" name="city" />
 
-            <h2>Education / Background</h2>
-            <label for="educationLevel">EDUCATION LEVEL</label>
+            <h2 data-i18n="education_background">Education / Background</h2>
+            <label for="educationLevel" data-i18n="education_level"
+              >EDUCATION LEVEL</label
+            >
             <select id="educationLevel" name="educationLevel">
-              <option value="">-- Select --</option>
-              <option>High School</option>
-              <option>Bachelor's</option>
-              <option>Master's</option>
-              <option>PhD</option>
-              <option>Other</option>
+              <option value="" data-i18n="select_option">-- Select --</option>
+              <option data-i18n="edu_high_school">High School</option>
+              <option data-i18n="edu_bachelor">Bachelor's</option>
+              <option data-i18n="edu_master">Master's</option>
+              <option data-i18n="edu_phd">PhD</option>
+              <option data-i18n="edu_phd">Other</option>
             </select>
 
-            <label for="proffession">FIELD OF STUDY / PROFESSION</label>
+            <label for="proffession" data-i18n="profession"
+              >FIELD OF STUDY / PROFESSION</label
+            >
             <input type="text" id="proffession" name="proffession" />
 
-            <label for="school">SCHOOL / UNIVERSITY / WORKPLACE</label>
+            <label for="school" data-i18n="school"
+              >SCHOOL / UNIVERSITY / WORKPLACE</label
+            >
             <input type="text" id="school" name="school" />
 
-            <h2>Motivation & Interests</h2>
-            <label for="motivation">WHY DO YOU WANT TO JOIN?</label>
+            <h2 data-i18n="motivation_title">Motivation & Interests</h2>
+            <label for="motivation" data-i18n="why_join"
+              >WHY DO YOU WANT TO JOIN?</label
+            >
             <textarea id="motivation" name="motivation" rows="4"></textarea>
 
-            <h2>What are your interests?</h2>
-            <label
-              ><input
-                type="checkbox"
-                name="interests"
-                value="food"
-              />FOOD</label
-            >
-            <label
-              ><input
-                type="checkbox"
-                name="interests"
-                value="projects"
-              />WORKING ON PROJECTS</label
-            >
-            <label
-              ><input type="checkbox" name="interests" value="events" />EVENT
-              ORGANIZING</label
-            >
-            <label
-              ><input
-                type="checkbox"
-                name="interests"
-                value="marketing"
-              />MARKETING</label
-            >
+            <h2 data-i18n="interests_title">What are your interests?</h2>
+            <label>
+              <input type="checkbox" name="interests" value="food" />
+              <span data-i18n="interest_food">FOOD</span>
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="projects" />
+              <span data-i18n="interest_projects">WORKING ON PROJECTS</span>
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="events" />
+              <span data-i18n="interest_events">EVENT ORGANIZING</span>
+            </label>
+            <label>
+              <input type="checkbox" name="interests" value="marketing" />
+              <span data-i18n="interest_marketing">MARKETING</span>
+            </label>
 
-            <h2>Availability</h2>
-            <p class="activities">Are you available to help with activities?</p>
+            <h2 data-i18n="availability_title">Availability</h2>
+            <p class="activities" data-i18n="availability_question">
+              Are you available to help with activities?
+            </p>
             <label
-              ><input type="radio" name="available" value="yes" /> YES</label
+              ><input type="radio" name="available" value="yes" />
+              <span data-i18n="yes">YES</span></label
             >
-            <label><input type="radio" name="available" value="no" /> NO</label>
+            <label
+              ><input type="radio" name="available" value="no" />
+              <span data-i18n="no">NO</span></label
+            >
             <label
               ><input type="radio" name="available" value="maybe" />
-              MAYBE</label
+              <span data-i18n="maybe">MAYBE</span></label
             >
 
-            <h2>Extras</h2>
-            <label for="cv">UPLOAD CV</label>
+            <h2 data-i18n="extras">Extras</h2>
+            <label for="cv" data-i18n="upload_cv">UPLOAD CV</label>
             <input type="file" id="cv" name="cv" />
 
-            <label for="cv">UPLOAD PHOTO</label>
+            <label for="cv" data-i18n="upload_photo">UPLOAD PHOTO</label>
             <input type="file" id="photo" name="photo" />
 
-            <label for="social">SOCIAL MEDIA (optional)</label>
+            <label for="social" data-i18n="social_media"
+              >SOCIAL MEDIA (optional)</label
+            >
             <input
               type="url"
               id="social"
@@ -127,16 +134,18 @@
             <div class="error-message" id="socialError"></div>
 
             <label class="checkbox-label">
-              <input type="checkbox" required /> I agree to the terms and
-              conditions*
+              <input type="checkbox" required />
+              <span data-i18n="agree_terms"
+                >I agree to the terms and conditions*</span
+              >
             </label>
 
-            <button type="submit">SUBMIT</button>
+            <button type="submit" data-i18n="submit">SUBMIT</button>
           </form>
 
           <div class="thank-you-message hidden" id="thankYouMessage">
-            <h2>Thank You!</h2>
-            <p>
+            <h2 data-i18n="thank_you">Thank You!</h2>
+            <p data-i18n="thank_you_joinUs">
               Your application has been received. We’re thrilled that you want
               to join us! We’ll be in touch soon.
             </p>

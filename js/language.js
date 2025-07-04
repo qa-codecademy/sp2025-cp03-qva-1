@@ -21,6 +21,8 @@ function applyTranslations() {
       pageTitle.textContent = window.languageMap[titleKey];
     }
   }
+
+  trimParagraphs();
 }
 
 function loadLanguage(lang) {
@@ -92,7 +94,10 @@ function setupFlagListeners() {
 
 function trimParagraphs() {
   const maxWords = 30;
-  document.querySelectorAll(".text-content p").forEach((p) => {
+  const paragraphs = document.querySelectorAll(".text-content p");
+  console.log("Trimming", paragraphs.length, "paragraphs"); // DEBUG
+
+  paragraphs.forEach((p) => {
     const text = p.textContent.trim();
     const words = text.split(/\s+/).filter(Boolean);
     if (words.length > maxWords) {
@@ -107,4 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLanguage(savedLang);
   setupLanguageDropdown();
   setupFlagListeners();
+
+  setTimeout(() => {
+    trimParagraphs();
+  }, 300);
 });

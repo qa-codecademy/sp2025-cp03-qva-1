@@ -1,111 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="contact_title">Contact</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
-  </head>
-  <body>
-    <div id="navbar"></div>
-    <div id="hero-contact">
-      <div class="hero-overlay"></div>
-      <div class="overlay-text">
-        <h1 data-i18n="contact_heading">Contact</h1>
-      </div>
-    </div>
-    <div class="contact-form">
-      <h2><span data-i18n="contact_get_in_touch">Get in touch</span></h2>
-      <h2><b data-i18n="contact_us">Contact us</b></h2>
-      <form class="form">
-        <div class="name-row">
-          <div class="input-group">
-            <label class="label" for="first-name" data-i18n="first_name"
-              >FIRST NAME*</label
-            >
-            <input type="text" name="first-name" class="first-name" required />
-          </div>
-          <div class="input-group">
-            <label class="label" for="last-name" data-i18n="last_name"
-              >LAST NAME*</label
-            >
-            <input type="text" name="last-name" class="last-name" required />
-          </div>
-        </div>
-        <label class="label" for="email" data-i18n="email">EMAIL*</label>
-        <input type="email" name="email" class="email" required />
-        <label class="label" for="phone" data-i18n="phone">PHONE*</label>
-        <input type="tel" name="phone" class="phone" required />
-        <label class="label" for="message" data-i18n="message">MESSAGE</label>
-        <textarea name="message" class="message" cols="20" rows="5"></textarea>
-        <button type="submit" data-i18n="submit">SUBMIT</button>
-      </form>
-    </div>
-    <div class="thank-you-message hidden" id="contactThankYou">
-      <div class="thank-you-inner">
-        <h2 data-i18n="thank_you_title">Thank You!</h2>
-        <p data-i18n="thank_you_text">
-          Your message has been received. We’ll get back to you shortly!
-        </p>
-      </div>
-    </div>
-    <div class="contact-info">
-      <div class="contact-box">
-        <img
-          src="../assets/icons/phone-solid.svg"
-          alt="phone-icon"
-          class="contact-icon"
-        />
-        <h3 data-i18n="emergency">EMERGENCY</h3>
-        <p>+389 (0)78 40 46 56</p>
-      </div>
-      <div class="contact-box">
-        <img
-          src="../assets/icons/location-dot-solid.svg"
-          alt="location-icon"
-          class="contact-icon location"
-        />
-        <h3 data-i18n="location">LOCATION</h3>
-        <p data-i18n="location_address">
-          GTC Global, floor 2, No.14 / 2400 Strumica, North Macedonia
-        </p>
-      </div>
-      <div class="contact-box">
-        <img
-          src="../assets/icons/envelope-solid.svg"
-          alt="envelope-icon"
-          class="contact-icon"
-        />
-        <h3 data-i18n="email_label">EMAIL</h3>
-        <p>quovadis3377@yahoo.com</p>
-      </div>
-      <div class="contact-box">
-        <img
-          src="../assets/icons/clock-solid.svg"
-          alt="clock-icon"
-          class="contact-icon"
-        />
-        <h3 data-i18n="working_hours">WORKING HOURS</h3>
-        <p data-i18n="working_hours_time">Mon-Sat 09:00 - 20:00</p>
-      </div>
-    </div>
-    <div class="location-map">
-      <iframe
-        title="Company Location on Google Maps"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.0467200869407!2d22.63632677656798!3d41.43820789284056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a9fe1392decaa3%3A0x9bd49e94c5d34a20!2sGlobal!5e0!3m2!1sen!2smk!4v1747658458218!5m2!1sen!2smk"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-    <div id="footer"></div>
-    <script src="../js/contact.js"></script>
-    <script src="../js/language.js"></script>
-    <script src="../js/include-components.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-i18n="contact_title">Contact</title>
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="../css/navbar.css" />
+		<link rel="stylesheet" href="../css/footer.css" />
+		<link rel="stylesheet" href="../css/contact.css" />
+	</head>
+	<body>
+		<div id="navbar"></div>
+		<div id="hero-contact">
+			<div class="hero-overlay"></div>
+			<div class="overlay-text">
+				<h1 data-i18n="contact_heading">Contact</h1>
+			</div>
+		</div>
+		<div class="contact-form">
+			<h2><span data-i18n="contact_get_in_touch">Get in touch</span></h2>
+			<h2><b data-i18n="contact_us">Contact us</b></h2>
+			<form class="form">
+				<div class="name-row">
+					<div class="input-group">
+						<label class="label" for="first-name" data-i18n="first_name"
+							>FIRST NAME*</label
+						>
+						<input type="text" name="first-name" class="first-name" required />
+					</div>
+					<div class="input-group">
+						<label class="label" for="last-name" data-i18n="last_name"
+							>LAST NAME*</label
+						>
+						<input type="text" name="last-name" class="last-name" required />
+					</div>
+				</div>
+				<label class="label" for="email" data-i18n="email">EMAIL*</label>
+				<input type="email" name="email" class="email" required />
+				<label class="label" for="phone" data-i18n="phone">PHONE*</label>
+				<input type="tel" name="phone" class="phone" required />
+				<label class="label" for="message" data-i18n="message">MESSAGE</label>
+				<textarea name="message" class="message" cols="20" rows="5"></textarea>
+				<button type="submit" data-i18n="submit">SUBMIT</button>
+			</form>
+		</div>
+		<div class="thank-you-message hidden" id="contactThankYou">
+			<div class="thank-you-inner">
+				<h2 data-i18n="thank_you_title">Thank You!</h2>
+				<p data-i18n="thank_you_text">
+					Your message has been received. We’ll get back to you shortly!
+				</p>
+			</div>
+		</div>
+		<div class="contact-info">
+			<div class="contact-box">
+				<img
+					src="../assets/icons/phone-solid.svg"
+					alt="phone-icon"
+					class="contact-icon" />
+				<h3 data-i18n="emergency">EMERGENCY</h3>
+				<p>+389 (0)78 40 46 56</p>
+			</div>
+			<div class="contact-box">
+				<img
+					src="../assets/icons/location-dot-solid.svg"
+					alt="location-icon"
+					class="contact-icon location" />
+				<h3 data-i18n="location">LOCATION</h3>
+				<p data-i18n="location_address">
+					GTC Global, floor 2, No.14 / 2400 Strumica, North Macedonia
+				</p>
+			</div>
+			<div class="contact-box">
+				<img
+					src="../assets/icons/envelope-solid.svg"
+					alt="envelope-icon"
+					class="contact-icon" />
+				<h3 data-i18n="email_label">EMAIL</h3>
+				<p>quovadis3377@yahoo.com</p>
+			</div>
+			<div class="contact-box">
+				<img
+					src="../assets/icons/clock-solid.svg"
+					alt="clock-icon"
+					class="contact-icon" />
+				<h3 data-i18n="working_hours">WORKING HOURS</h3>
+				<p data-i18n="working_hours_time">Mon-Sat 09:00 - 20:00</p>
+			</div>
+		</div>
+		<div class="location-map">
+			<iframe
+				title="Company Location on Google Maps"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.0467200869407!2d22.63632677656798!3d41.43820789284056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a9fe1392decaa3%3A0x9bd49e94c5d34a20!2sGlobal!5e0!3m2!1sen!2smk!4v1747658458218!5m2!1sen!2smk"
+				width="600"
+				height="450"
+				style="border: 0"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div id="footer"></div>
+		<script src="../js/contact.js"></script>
+		<script src="../js/language.js"></script>
+		<script src="../js/include-components.js"></script>
+	</body>
 </html>
